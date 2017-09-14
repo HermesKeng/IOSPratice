@@ -14,7 +14,8 @@ class RestaurantTableViewController: UITableViewController {
                       "Po's Atelier","Bourke Street Bakery","Haigh's Chocolate","Palomino Espresso","Upstate",
                       "Traif","Graham Avenue Meats","Waffle & Wolf"]
     var restaurantImg=["cafedeadend.jpg","homei.jpg","teakha.jpg","cafeloisl.jpg","petiteoyster.jpg","forkeerestaurant.jpg","posatelier.jpg","bourkestreetbakery.jpg","haighschocolate.jpg","palominoespresso.jpg","upstate.jpg","traif.jpg","grahamavenuemeats.jpg","wafflewolf.jpg","fiveleaves.jpg","cafelore.jpg"]
-    
+    var restaurantLocation=["Hong Kong","Hong Kong","Hong Kong","Hong Kong","Taiwan","Sydney","New York","London","London","French","Spanish","Japan","Denmark","South Korea","Singapore"]
+    var restaurantType=["Coffe & Tea Shop","Cafe","Tea House","Austrain / Causual Drink","French","Bakery","Bakery","Chocolate","American","Coffee & Tea","Latin American","Latin American","Spanish","Thai","Bakery"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,6 +49,8 @@ class RestaurantTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RestaurantTableViewCell
         
         cell.nameLabel.text=restaurant[indexPath.row]
+        cell.locationLabel.text=restaurantLocation[indexPath.row]
+        cell.typeLabel.text=restaurantType[indexPath.row]
         cell.thumbnailImageView.image=UIImage(named: restaurantImg[indexPath.row])
         cell.thumbnailImageView.layer.cornerRadius=30.0
         cell.thumbnailImageView.clipsToBounds=true
